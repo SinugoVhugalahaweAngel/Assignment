@@ -30,6 +30,29 @@ public class Useraccountmanager {
         System.out.println("Register your account.");
         System.out.println("Enter a username (max 5 characters, must include an underscore): ");
         String username = sc.nextLine();   // Read username from user input
+        
+         // Validate the username format using checkUserName() from the Login class
+        if (!login.checkUserName(username)) {
+            System.out.println("Invalid username format. Username must be max 5 characters and contain an underscore.");
+            return;  // Exit if the username format is invalid
+        }
+
+        // Prompt the user to enter a password that meets complexity requirements
+        System.out.println("Enter a password (must include a capital letter, number, and special character): ");
+        String password = sc.nextLine();   // Read password from user input
+
+        // Register the user using the provided username and password
+        String registrationMessage = login.registerUser(username, password);
+        System.out.println(registrationMessage);  // Output the result of the registration process
+
+        // If registration is successful, proceed to login
+        if (registrationMessage.equals("User registered successfully.")) {
+            System.out.println("\nLogin to your account.");
+            
+            // Prompt the user to enter their username for login
+            System.out.println("Enter your username: ");
+            String loginUsername = sc.nextLine();   // Read the login username
+
 
     }
 }
