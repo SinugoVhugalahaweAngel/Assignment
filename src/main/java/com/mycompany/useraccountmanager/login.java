@@ -67,4 +67,14 @@ public class login {
         return this.username.equals(username) && this.password.equals(password);  // Dynamic username and password check
     }
     
-}
+     // This method returns the necessary messaging for :A successful log in ,A Failed log in 
+    public String returnLoginStatus(String username, String password, String firstName, String lastName) { // firstName and lastName added
+        if (loginUser(username, password)) {
+            return "Welcome " + firstName + " " + lastName + ", it is great to see you again.";
+        } else {
+            return "Username or password incorrect, please try again.";
+        }
+    
+    }
+    }
+
