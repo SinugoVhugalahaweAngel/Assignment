@@ -45,6 +45,29 @@ public class loginTest {
         // TODO review the generated test code and remove the default call to fail.
        
     }
+    
+    @org.junit.jupiter.api.Test
+    
+    /**
+     * Another test of checkUserName with an invalid input
+     */
+    
+    public void testCheckUserNameInvalid() {
+        System.out.println("checkUserName");
+        String username = "Kyle!!!!!";
+        login instance = new login();
+        boolean expResult = false;
+        boolean result = instance.checkUserName(username);
+        // Assert that the result matches the expected result
+       assertEquals(expResult, result);
+       // Print the result for manual verification
+        System.out.println("username is not correctly formatted,Please ensure that your username contains underscore and is no more than 5 characters  in length");
+
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        
+    }
+
 
     /**
      * Test of checkPasswordComplexity method, of class login.
