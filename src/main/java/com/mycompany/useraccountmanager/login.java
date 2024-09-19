@@ -62,4 +62,9 @@ public class login {
     }
 
     
+    // This  Method Verifies that login details entered matches the login details stored when the userregistered
+    public boolean loginUser(String username, String password) {
+        return this.username.equals(username) && this.password.equals(password);  // Dynamic username and password check
+    }
+    
 }
