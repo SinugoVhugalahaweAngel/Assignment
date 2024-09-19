@@ -89,6 +89,30 @@ public class loginTest {
         
         
     }
+    
+    @org.junit.jupiter.api.Test
+    /**
+     * Test of checkPasswordComplexity method with an invalid password.
+     */
+    public void testCheckPasswordComplexityInvalid() {
+        System.out.println("checkPasswordComplexity");  
+        
+        //Invalid password (does not meet complexity requirements)
+        String password = "password";
+        login instance = new login();
+        boolean expResult = false;
+        boolean result = instance.checkPasswordComplexity(password);
+        // Assert that the result matches the expected result
+        assertEquals(expResult, result);
+        
+        /* Print: "Password is not correctly formatted,Password is not correctly formatted, please ensure the password
+        contains at least 8 characters, a capital letter, a number, and a special character."
+        */
+        System.out.println("password is not correctly formatted ,Please ensure that the password contains atleast 8 characters ,a capital letter,a number and a special character");
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");
+        
+    }
 
     /**
      * Test of registerUser method, of class login.
