@@ -28,4 +28,14 @@ public class User{
      public void setusername(String z){
          username = z;
      }
+     
+      // Getter method to return the value of the password
+     public String getpassword(){
+         return password;
+     }
+     
+         // Setter method to set the value of the password
+     public void  setpassword(String w){
+         password= w;
+     }
 }
