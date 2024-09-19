@@ -75,13 +75,19 @@ public class loginTest {
     @org.junit.jupiter.api.Test
     public void testCheckPasswordComplexity() {
         System.out.println("checkPasswordComplexity");
-        String password = "";
+        // Valid password (meets all complexity requirements)
+        String password = "Ch&&sec@ke99!";
         login instance = new login();
-        boolean expResult = false;
+        boolean expResult = true;
         boolean result = instance.checkPasswordComplexity(password);
+         // Assert that the result matches the expected result
         assertEquals(expResult, result);
+        
+        // Print a message: "Password successfully captured
+        System.out.println("Password successfully captured");
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
+        
     }
 
     /**
