@@ -49,4 +49,16 @@ public class User{
      public String getfirstname(){
         return firstname;
      }
+     
+      // Setter method to set the last name of the user
+     public void setLastname(String m){
+         Lastname = m;
+     }
+     
+     
+    // Getter method to return the value of the last name
+     public String getLastname(){   
+    return Lastname;
+}
+        
 }
