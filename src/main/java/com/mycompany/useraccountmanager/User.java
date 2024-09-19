@@ -38,4 +38,15 @@ public class User{
      public void  setpassword(String w){
          password= w;
      }
+     
+     // Setter method to set the first name of the user
+     public void setfirstname(String n){
+         firstname=n;
+     }
+     
+     
+    // Getter method to return the value of the first name
+     public String getfirstname(){
+        return firstname;
+     }
 }
