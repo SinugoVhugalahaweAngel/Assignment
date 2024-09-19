@@ -52,6 +52,15 @@ public class Useraccountmanager {
             // Prompt the user to enter their username for login
             System.out.println("Enter your username: ");
             String loginUsername = sc.nextLine();   // Read the login username
+            
+             // Prompt the user to enter their password for login
+            System.out.println("Enter your password: ");
+            String loginPassword = sc.nextLine();   // Read the login password
+
+            // Verify the login credentials using returnLoginStatus() and pass first and last names for personalized message
+            String loginStatus = login.returnLoginStatus(loginUsername, loginPassword, firstName, lastName);
+            System.out.println(loginStatus);  // Output the login result (success or failure)
+        }
 
 
     }
