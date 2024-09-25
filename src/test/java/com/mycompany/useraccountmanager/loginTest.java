@@ -120,8 +120,8 @@ public class loginTest {
     @org.junit.jupiter.api.Test
     public void testRegisterUser() {
         System.out.println("registerUser");
-        String username = "Kyl_1";
-        String password = "Ch&&sec@ke99!";
+        String username = "Kyl_1";  // valid username (with underscore)
+        String password = "Ch&&sec@ke99!";// Valid password
         login instance = new login();
         String expResult = "User registered successfully.";
         String result = instance.registerUser(username, password);
@@ -129,6 +129,17 @@ public class loginTest {
         // TODO review the generated test code and remove the default call to fail.
     
         
+    }
+    
+     @org.junit.jupiter.api.Test
+    public void testRegisterUser_InvalidUsername() {
+        System.out.println("registerUser with invalid username");
+        String username = "Kyle!!!!!!";  // Invalid username (no underscore)
+        String password = "Ch&&sec@ke99!";  // Valid password
+        login instance = new login();
+        String expResult = "Username is not correctly formatted, please ensure that your username contains an underscore and is no more than 5 characters in length.";
+        String result = instance.registerUser(username, password);
+        assertEquals(expResult, result);
     }
 
     /**
