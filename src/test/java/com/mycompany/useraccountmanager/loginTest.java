@@ -120,14 +120,15 @@ public class loginTest {
     @org.junit.jupiter.api.Test
     public void testRegisterUser() {
         System.out.println("registerUser");
-        String username = "";
-        String password = "";
+        String username = "Kyl_1";
+        String password = "Ch&&sec@ke99!";
         login instance = new login();
-        String expResult = "";
+        String expResult = "User registered successfully.";
         String result = instance.registerUser(username, password);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    
+        
     }
 
     /**
