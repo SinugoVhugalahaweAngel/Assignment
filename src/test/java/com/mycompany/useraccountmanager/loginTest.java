@@ -125,6 +125,7 @@ public class loginTest {
         login instance = new login();
         String expResult = "User registered successfully.";
         String result = instance.registerUser(username, password);
+        // Assert that the result matches the expected result
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
     
@@ -139,6 +140,7 @@ public class loginTest {
         login instance = new login();
         String expResult = "Username is not correctly formatted, please ensure that your username contains an underscore and is no more than 5 characters in length.";
         String result = instance.registerUser(username, password);
+        // Assert that the result matches the expected result
         assertEquals(expResult, result);
     }
     
