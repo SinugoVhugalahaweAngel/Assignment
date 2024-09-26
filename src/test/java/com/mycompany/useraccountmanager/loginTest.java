@@ -141,22 +141,53 @@ public class loginTest {
         String result = instance.registerUser(username, password);
         assertEquals(expResult, result);
     }
+    
+   
+    @org.junit.jupiter.api.Test
+    public void testRegisterUser_InvalidPassword() {
+        System.out.println("registerUser with invalid password");
+
+        // Set test data
+        String username = "Kyl_1";  // Valid username
+        String password = "password";  // Invalid password (no capital letter, no number, no special character)
+
+        // Create an instance of the login system
+        login instance = new login();
+
+        // Expected result for invalid password
+        String expResult = "Password is not correctly formatted, please ensure that the password contains at least 8 characters, a capital letter, a number, and a special character.";
+
+        // Perform the test
+        String result = instance.registerUser(username, password);
+
+        // Assert that the result matches the expected result
+        assertEquals(expResult, result);
+    }
 
     /**
      * Test of loginUser method, of class login.
      */
     @org.junit.jupiter.api.Test
     public void testLoginUser() {
-        System.out.println("loginUser");
-        String username = "";
-        String password = "";
+       
+        System.out.println("loginUser with valid credentials");
+
+        // Create a Login instance and register a user
+        String registeredUsername = "testUser";
+        String registeredPassword = "TestPassword@123";
         login instance = new login();
-        boolean expResult = false;
+        instance.registerUser(registeredUsername, registeredPassword);
+
+        // Test login with correct credentials
+        String username = "testUser";
+        String password = "TestPassword@123";
+        boolean expResult = true;  // Expect login to succeed
         boolean result = instance.loginUser(username, password);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //fail("The test case is a prototype.");
     }
+
 
     /**
      * Test of returnLoginStatus method, of class login.
