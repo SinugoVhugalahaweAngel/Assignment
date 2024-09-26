@@ -168,25 +168,29 @@ public class loginTest {
      * Test of loginUser method, of class login.
      */
     @org.junit.jupiter.api.Test
-    public void testLoginUser() {
-       
+    public void testLoginUserValid() {
         System.out.println("loginUser with valid credentials");
-
-        // Create a Login instance and register a user
-        String registeredUsername = "testUser";
-        String registeredPassword = "TestPassword@123";
+        String username = "Kyl_1";
+        String password = "Ch&&sec@ke99!";
+       
+        
+        // Create an instance of the login system and register a user
         login instance = new login();
-        instance.registerUser(registeredUsername, registeredPassword);
-
-        // Test login with correct credentials
-        String username = "testUser";
-        String password = "TestPassword@123";
-        boolean expResult = true;  // Expect login to succeed
+        instance.registerUser(username, password);// Assuming the user has been registered previously
+        
+        //Expected results
+        boolean expResult = true;
         boolean result = instance.loginUser(username, password);
+        
+        // Assert that the result matches the expected output
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
+        
+
+        
     }
+        
+    
 
 
     /**
