@@ -170,8 +170,8 @@ public class loginTest {
     @org.junit.jupiter.api.Test
     public void testLoginUserValid() {
         System.out.println("loginUser with valid credentials");
-        String username = "Kyl_1";
-        String password = "Ch&&sec@ke99!";
+        String username = "Kyl_1";//registered username
+        String password = "Ch&&sec@ke99!";//registered password
        
         
         // Create an instance of the login system and register a user
@@ -185,11 +185,30 @@ public class loginTest {
         // Assert that the result matches the expected output
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        
+       
+    }
+         @org.junit.jupiter.api.Test
+    public void testLoginUserInvalid() {
+        System.out.println("loginUser with invalid credentials");
 
+        // Set up test data
+        String username = "Kyl_1";  //registered username
+        String password = "password";  // Incorrect password
+
+        // Create an instance of the login system and register a user
+        login instance = new login();
+        instance.registerUser("Kyl_1", "Ch&&sec@ke99!");  // Registered with valid credentials
+
+        // Expected result 
+        boolean expResult = false;
+
+       
+        boolean result = instance.loginUser(username, password);
+
+        // Assert that the result matches the expected output
+        assertEquals(expResult, result);
         
     }
-        
     
 
 
