@@ -215,19 +215,32 @@ public class loginTest {
     /**
      * Test of returnLoginStatus method, of class login.
      */
-    @org.junit.jupiter.api.Test
-    public void testReturnLoginStatus() {
+    
+        @org.junit.jupiter.api.Test
+    public void testReturnLoginStatus_InvalidCredentials() {
         System.out.println("returnLoginStatus");
-        String username = "";
-        String password = "";
-        String firstName = "";
-        String lastName = "";
+
+        
+        String username = "Kyl_1";// Registered username
+        String password = "password";// Incorrect password
+        String firstName = "Angel";
+        String lastName = "sinugo";
+
+        // Create a Login instance and register the same user
         login instance = new login();
-        String expResult = "";
+         instance.registerUser("Kyl_1", "Ch&&sec@ke99!");  // Registering with valid credentials
+        
+        // Expected result for failed login
+        String expResult = "Username or password incorrect, please try again.";
+
+         
+        // Perform the test
         String result = instance.returnLoginStatus(username, password, firstName, lastName);
+        
+        // Assert that the result matches the expected result
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
+       
+    
     
 }
