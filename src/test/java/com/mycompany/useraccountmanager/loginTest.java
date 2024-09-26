@@ -230,17 +230,40 @@ public class loginTest {
         login instance = new login();
          instance.registerUser("Kyl_1", "Ch&&sec@ke99!");  // Registering with valid credentials
         
-        // Expected result for failed login
+        // Expected 
         String expResult = "Username or password incorrect, please try again.";
 
          
-        // Perform the test
+        
         String result = instance.returnLoginStatus(username, password, firstName, lastName);
         
         // Assert that the result matches the expected result
         assertEquals(expResult, result);
     }
        
-    
-    
+    @org.junit.jupiter.api.Test
+  public void testReturnLoginStatus_ValidCredentials() {
+        System.out.println("returnLoginStatus with valid credentials");
+
+        // Set test data
+        String username = "Kyl_1";  // Valid username
+        String password = "Ch&&sec@ke99!";  // Valid password
+        String firstName = "Angel";
+        String lastName = "sinugo";
+
+         // Create an instance of the login system and register a user
+        login instance = new login();
+        instance.registerUser(username, password);  // Registering valid user
+
+        // Expected result 
+        String expResult = "Welcome Angel sinugo, it is great to see you again.";
+
+        // Perform the test
+        String result = instance.returnLoginStatus(username, password, firstName, lastName);
+
+        // Assert that the result matches the expected result
+        assertEquals(expResult, result);
+    }
 }
+    
+
